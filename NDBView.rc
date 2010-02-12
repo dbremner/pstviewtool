@@ -1,0 +1,745 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\NDBView.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\NDBView.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About NDBView"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "NDBView Version 1.1Beta - Unicode",IDC_STATIC,40,10,135,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007 Microsoft",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_NDBVIEW_DIALOG DIALOGEX 0, 0, 547, 409
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PST Data Structure Viewer"
+MENU IDR_MENU1
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,152,250,250
+    CONTROL         "",IDC_TREE2,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,290,152,250,250
+    LTEXT           "Nodes BTree",IDC_STATIC,7,142,42,8
+    LTEXT           "Blocks BTree",IDC_STATIC,290,142,41,8
+    LTEXT           "Header",IDC_STATIC,7,7,24,8
+    CONTROL         "",IDC_TREE4,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,18,533,117
+END
+
+IDD_INSPECTOR_PICKER DIALOGEX 0, 0, 174, 114
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "View Address"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,93,50,14
+    PUSHBUTTON      "Cancel",2,117,93,50,14
+    LTEXT           "Address",IDC_STATIC,7,7,27,8
+    LTEXT           "Type",IDC_STATIC,7,32,17,8
+    LTEXT           "Size",IDC_STATIC,7,58,14,8
+    EDITTEXT        IDC_EDIT2,69,7,98,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,69,58,98,14,ES_RIGHT | ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,69,32,98,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_AMAP_DIALOG DIALOGEX 0, 0, 170, 260
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Not Loaded"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+END
+
+IDD_BT_DIALOG DIALOGEX 0, 0, 170, 260
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Not Loaded"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+END
+
+IDD_TEST_DIALOG DIALOGEX 0, 0, 271, 343
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_CUSTOM1,"CBlockTrailerCtrl",WS_TABSTOP,7,37,257,136
+    LISTBOX         IDC_LIST3,7,195,257,141,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Hex",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,7,181,29,10
+    CONTROL         "Binary",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,43,181,35,10
+    CONTROL         "Unicode",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,85,181,45,10
+    CONTROL         "Custom2",IDC_CUSTOM2,"CFileRangeControl",WS_TABSTOP,7,7,257,24
+END
+
+IDD_BINARY_DATA_INSPECTOR DIALOGEX 0, 0, 247, 273
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_CUSTOM1,"CFileRangeControl",WS_TABSTOP,7,7,233,20
+    CONTROL         "Hexidecimal",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,7,28,53,10
+    CONTROL         "Binary",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,65,28,36,10
+    CONTROL         "Unicode String",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,106,28,65,10
+    LISTBOX         IDC_LIST1,7,43,233,223,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_BLOCK_INSPECTOR DIALOGEX 0, 0, 262, 303
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,248,20
+    CONTROL         "Custom4",IDC_CUSTOM4,"CBlockTrailerControl",WS_TABSTOP,7,33,248,99
+    CONTROL         "Hexidecimal",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,7,140,53,10
+    CONTROL         "Binary",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,65,140,36,10
+    CONTROL         "Unicode String",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,106,140,65,10
+    LISTBOX         IDC_LIST1,7,156,248,140,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Placeholder",IDC_STATIC,179,141,76,11
+END
+
+IDD_PAGE_INSPECTOR DIALOGEX 0, 0, 262, 321
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_CUSTOM1,"CFileRangeControl",WS_TABSTOP,7,7,248,20
+    CONTROL         "Custom2",IDC_CUSTOM2,"CPageTrailerControl",WS_TABSTOP,7,33,248,114
+    CONTROL         "Hexidecimal",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,7,156,53,10
+    CONTROL         "Binary",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,65,156,36,10
+    LISTBOX         IDC_LIST1,7,175,248,139,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_XBLOCK_INSPECTOR DIALOGEX 0, 0, 281, 324
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,267,20
+    CONTROL         "Custom4",IDC_CUSTOM4,"CBlockTrailerControl",WS_TABSTOP,7,121,267,87
+    GROUPBOX        "XBlock Header",IDC_STATIC,7,31,267,87
+    LTEXT           "Static",IDC_VALUES,147,47,117,65
+    LTEXT           "Static",IDC_LABELS,25,47,121,64
+    LISTBOX         IDC_LIST1,7,212,267,105,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SBLOCK_INSPECTOR DIALOGEX 0, 0, 286, 322
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,272,20
+    CONTROL         "Custom4",IDC_CUSTOM4,"CBlockTrailerControl",WS_TABSTOP,7,110,272,87
+    GROUPBOX        "SBlock Header",IDC_STATIC,7,31,272,73
+    LTEXT           "Static",IDC_VALUES,147,47,117,52
+    LTEXT           "Static",IDC_LABELS,25,47,121,50
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,204,193,111
+    LTEXT           "Note: Data will have to be loaded from other SBlocks in order to fill out the BTree if this is a non-leaf page",IDC_STATIC,204,204,75,103
+END
+
+IDD_BT_INSPECTOR DIALOGEX 0, 0, 272, 381
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,258,20
+    GROUPBOX        "BTPage Trailer",IDC_STATIC,7,31,258,84
+    LTEXT           "Static",IDC_VALUES,141,47,117,62
+    LTEXT           "Static",IDC_LABELS,25,47,110,61
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,234,185,140
+    LTEXT           "Note: Data will have to be loaded from other BT Pages in order to fill out the BTree if this is a non-leaf page",IDC_STATIC,198,234,68,125
+    CONTROL         "Custom4",IDC_CUSTOM4,"CPageTrailerControl",WS_TABSTOP,7,121,258,107
+END
+
+IDD_SCAVENGE_RANGE DIALOGEX 0, 0, 149, 97
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scavenge Area"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,76,50,14
+    PUSHBUTTON      "Cancel",2,92,76,50,14
+    LTEXT           "Address",IDC_STATIC,7,7,27,8
+    LTEXT           "Size",IDC_STATIC,7,31,14,8
+    EDITTEXT        IDC_EDIT2,44,7,98,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,44,31,98,14,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "Search Free Space Only",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,42,54,100,10
+END
+
+IDD_SCAVENGE_RESULTS DIALOGEX 0, 0, 268, 159
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scavenge Results"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,254,20
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,45,254,107
+    LTEXT           "The following blocks/pages were found in the specified range",IDC_STATIC,7,34,240,8
+END
+
+IDD_CONSISTENCY_REPORT DIALOGEX 0, 0, 401, 311
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,7,159,297
+    GROUPBOX        "Test Title",IDC_STATIC,176,7,218,90
+    LTEXT           "Static",IDC_STATIC1,185,19,201,67
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,176,105,218,199
+END
+
+IDD_REF_REPORT DIALOGEX 0, 0, 343, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    LTEXT           "Static",IDC_STATIC,7,7,329,8
+    CONTROL         "",IDC_LIST3,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,23,329,180
+END
+
+IDD_REF_REPORT_BID DIALOGEX 0, 0, 142, 53
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BID Ref Report"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT1,41,7,94,14,ES_AUTOHSCROLL,WS_EX_RIGHT
+    DEFPUSHBUTTON   "OK",IDOK,7,32,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,85,32,50,14
+    LTEXT           "BID",IDC_STATIC,7,7,13,8
+END
+
+IDD_NID_SIZE DIALOGEX 0, 0, 230, 279
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    LTEXT           "Data BID Size:",IDC_STATIC,7,7,48,8
+    LTEXT           "Subnodes BID Size:",IDC_STATIC,7,20,67,8
+    LTEXT           "Static",IDC_STATIC1,91,7,132,8
+    LTEXT           "Static",IDC_STATIC2,91,20,132,8
+    LTEXT           "Total Size:",IDC_STATIC,7,35,35,8
+    LTEXT           "Static",IDC_STATIC3,91,35,132,8
+END
+
+IDD_NID_SIZE_NID DIALOGEX 0, 0, 167, 130
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Node"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT4,66,7,94,14,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT1,66,32,94,14,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT2,66,57,94,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,66,82,94,72,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,7,109,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,109,50,14
+    LTEXT           "Parent NID",IDC_STATIC,7,32,50,8
+    LTEXT           "NID",IDC_STATIC,7,7,13,8
+    LTEXT           "Type",IDC_STATIC,7,82,16,8
+    LTEXT           "HID",IDC_STATIC,7,57,14,8
+END
+
+IDD_STATS DIALOGEX 0, 0, 469, 274
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistics"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "Page Statistics",IDC_STATIC,7,7,208,139
+    GROUPBOX        "Block Statistics",IDC_STATIC,234,7,229,139
+    GROUPBOX        "Node Statistics",IDC_STATIC,7,159,227,108
+    GROUPBOX        "General Info",IDC_STATIC,253,159,210,108
+    RTEXT           "Active Pages (size):",IDC_STATIC,18,19,76,8
+    RTEXT           "BBT (size - % total):",IDC_STATIC,18,37,76,8
+    RTEXT           "NBT (size - % total):",IDC_STATIC,18,55,76,8
+    RTEXT           "AMap (size - % total):",IDC_STATIC,18,73,76,8
+    RTEXT           "FMap (size - % total):",IDC_STATIC,18,91,76,8
+    RTEXT           "PMap (size - % total):",IDC_STATIC,18,109,76,8
+    RTEXT           "FPMap (size - % total):",IDC_STATIC,18,127,76,8
+    RTEXT           "Messages (% lifetime):",IDC_STATIC,18,170,114,8
+    RTEXT           "Associated Messages (% lifetime):",IDC_STATIC,18,188,114,8
+    RTEXT           "Folders (% lifetime):",IDC_STATIC,18,205,114,8
+    RTEXT           "Last Modified Node:",IDC_STATIC,18,242,114,8
+    RTEXT           "Search Folders (% lifetime):",IDC_STATIC,18,224,114,8
+    RTEXT           "File Size:",IDC_STATIC,267,170,113,8
+    RTEXT           "Percent Free Space:",IDC_STATIC,267,188,113,8
+    RTEXT           "Percent BID Address Space Used:",IDC_STATIC,267,206,113,8
+    RTEXT           "Active Blocks (size):",IDC_STATIC,244,19,102,8
+    RTEXT           "External (size - % total):",IDC_STATIC,244,37,102,8
+    RTEXT           "XBlock (size - % total):",IDC_STATIC,244,55,102,8
+    RTEXT           "XXBlock (size - % total):",IDC_STATIC,244,73,102,8
+    RTEXT           "SBlock (size - % total):",IDC_STATIC,244,91,102,8
+    RTEXT           "Reused Blocks (size - % total):",IDC_STATIC,244,109,102,8
+    RTEXT           "Largest Logical Block (size):",IDC_STATIC,244,127,102,8
+    LTEXT           "Static",IDC_ACTIVE_PAGES,105,19,104,8
+    LTEXT           "Static",IDC_BBT,105,37,104,8
+    LTEXT           "Static",IDC_NBT,105,55,104,8
+    LTEXT           "Static",IDC_AMAP,105,73,104,8
+    LTEXT           "Static",IDC_FMAP,105,91,104,8
+    LTEXT           "Static",IDC_PMAP,105,109,104,8
+    LTEXT           "Static",IDC_FPMAP,105,127,104,8
+    LTEXT           "Static",IDC_ACTIVE_BLOCKS,359,19,96,8
+    LTEXT           "Static",IDC_EXTERNAL,359,37,96,8
+    LTEXT           "Static",IDC_XBLOCK,359,55,96,8
+    LTEXT           "Static",IDC_XXBLOCK,359,73,96,8
+    LTEXT           "Static",IDC_SBLOCK,359,91,96,8
+    LTEXT           "Static",IDC_REUSED,359,109,96,8
+    LTEXT           "Static",IDC_LARGEST,359,127,96,8
+    LTEXT           "Static",IDC_MESSAGES,146,170,85,8
+    LTEXT           "Static",IDC_ASS_MESSAGES,146,188,85,8
+    LTEXT           "Static",IDC_FOLDERS,146,206,85,8
+    LTEXT           "Static",IDC_SRC_FOLDERS,146,224,85,8
+    LTEXT           "Static",IDC_LAST_MODIFIED,146,242,85,8
+    LTEXT           "Static",IDC_FILE_SIZE,389,170,67,8
+    LTEXT           "Static",IDC_PERCENT_FREE,389,188,67,8
+    LTEXT           "Static",IDC_PERCENT_BID,389,206,67,8
+END
+
+IDD_AMRI DIALOGEX 0, 0, 367, 141
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AMapRebuild Resume Info"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_CUSTOM1,"CFileRangeControl",WS_TABSTOP,7,7,353,21
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,38,353,96
+END
+
+IDD_HN_INSPECTOR DIALOGEX 0, 0, 274, 367
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom1",IDC_CUSTOM1,"CFileRangeControl",WS_TABSTOP,7,7,260,20
+    LISTBOX         IDC_LIST2,7,130,110,230,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "HN Header",IDC_STATIC,7,31,260,87
+    LTEXT           "Static",IDC_VALUES,150,47,109,65
+    LTEXT           "Static",IDC_LABELS,18,47,121,64
+    GROUPBOX        "HN Page Info",IDC_STATIC,126,126,141,100
+    LTEXT           "Static",IDC_PAGE_INFO,137,141,122,79
+    LISTBOX         IDC_LIST4,126,247,141,113,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Allocation Information",IDC_STATIC,126,234,71,8
+END
+
+IDD_BTH_INSPECTOR DIALOGEX 0, 0, 272, 295
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Segoe UI", 400, 0, 0x0
+BEGIN
+    CONTROL         "Custom3",IDC_CUSTOM3,"CFileRangeControl",WS_TABSTOP,7,7,258,20
+    GROUPBOX        "BTH Header",-1,7,31,258,106
+    LTEXT           "Static",IDC_VALUES,141,47,117,86
+    LTEXT           "Static",IDC_LABELS,25,47,110,85
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,142,258,146
+END
+
+IDD_INDEXROOT DIALOGEX 0, 0, 266, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,73,252,150
+    GROUPBOX        "TCV Index Root Header",IDC_STATIC,7,7,252,48
+    LTEXT           "bPlatform:\n\nbVersion:",IDC_STATIC,19,22,82,30
+    LTEXT           "0x0\n\n0x0",IDC_VALUES,125,22,124,31
+    LTEXT           "rgtcvii:",IDC_STATIC,7,63,75,8
+END
+
+IDD_PC_INSPECTOR DIALOGEX 0, 0, 473, 269
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,36,459,226
+    CONTROL         "Custom1",IDC_CUSTOM1,"CFileRangeControl",WS_TABSTOP,7,7,459,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,5,0
+ PRODUCTVERSION 1,0,5,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft"
+            VALUE "FileDescription", "NDB Viewer"
+            VALUE "FileVersion", "1.0.5"
+            VALUE "InternalName", "NDBView.exe"
+            VALUE "LegalCopyright", "(c) Microsoft.  All rights reserved."
+            VALUE "OriginalFilename", "NDBView.exe"
+            VALUE "ProductName", "NDB Viewer"
+            VALUE "ProductVersion", "1.0.5"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_NDBVIEW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 540
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 402
+    END
+
+    IDD_INSPECTOR_PICKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_AMAP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 254
+    END
+
+    IDD_BT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_TEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
+
+    IDD_BINARY_DATA_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 266
+    END
+
+    IDD_BLOCK_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_PAGE_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 314
+    END
+
+    IDD_XBLOCK_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 317
+    END
+
+    IDD_SBLOCK_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 279
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 315
+    END
+
+    IDD_BT_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+
+    IDD_SCAVENGE_RANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_SCAVENGE_RESULTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_CONSISTENCY_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_REF_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 336
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_REF_REPORT_BID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_NID_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_NID_SIZE_NID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_STATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 463
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 267
+    END
+
+    IDD_AMRI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 360
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_HN_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 360
+    END
+
+    IDD_BTH_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 288
+    END
+
+    IDD_INDEXROOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_PC_INSPECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 466
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENUEX 
+BEGIN
+    POPUP "File",                           65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "Open...",                     ID_FILE_OPEN32771,MFT_STRING,MFS_ENABLED
+        MENUITEM "Close",                       ID_FILE_CLOSE32775,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Exit",                        ID_FILE_EXIT,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "View",                           65535,MFT_STRING,MFS_GRAYED
+    BEGIN
+        MENUITEM "Address...",                  ID_VIEW_ADDRESS,MFT_STRING,MFS_ENABLED
+        MENUITEM "NID...",                      ID_VIEW_NODESIZE,MFT_STRING,MFS_ENABLED
+        MENUITEM "AMR Info",                    ID_VIEW_AMRINFO,MFT_STRING,MFS_ENABLED
+        MENUITEM "Scavenge Range...",           ID_VIEW_SCAVENGE,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Allocation Map",              ID_VIEW_ALLOCATIONMAP,MFT_STRING,MFS_ENABLED
+        MENUITEM "BTree Page Distribution",     ID_VIEW_BTREEPAGEDISTRIBUTION,MFT_STRING,MFS_ENABLED
+        MENUITEM "Ref Report...",               ID_VIEW_REFREPORT,MFT_STRING,MFS_ENABLED
+        MENUITEM "Statistics",                  ID_VIEW_STATISTICS,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Consistency Report",          ID_VIEW_CONSISTENCYREPORT,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "Help",                           65535,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    BEGIN
+        MENUITEM "About NDBView",               ID_HELP_ABOUTNDBVIEW,MFT_STRING,MFS_ENABLED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP2             BITMAP                  "res\\24.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PSTViewer..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\NDBView.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
