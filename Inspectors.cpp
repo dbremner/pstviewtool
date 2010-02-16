@@ -894,37 +894,40 @@ BOOL CScavengeResults::OnInitDialog()
 		if(	
 			(pt.ptype == pt.ptypeRepeat) && 
 			(pt.ptype >= ptypeBBT) &&
-			(pt.bid > 0) &&
-			(ComputeSig(end-cbPage, pt.bid) == pt.wSig)
+			(pt.bid > 0)
 		)
 		{
+			bool validSig = (ComputeSig(end-cbPage, pt.bid) == pt.wSig);
 			// close enough
 			start = end - cbPage;
 			
 			if((start < (m_start + m_length)) && end > m_start)
 			{
 				BYTE * pPage = new BYTE[cbPageData];
-				NodeData * pNodeData = new NodeData;
 
 				m_pNDBViewer->ReadData(pPage, cbPageData, NULL, 0, end-cbPage, cbPage);
 				fCRCValid = (ComputeCRC(pPage, cbPageData) == pt.dwCRC);
-				nImage = fCRCValid ? iconPage : iconCorrupt;
 
-				pNodeData->bref.ib = start;
-				pNodeData->bref.bid = pt.bid;
-				pNodeData->cb = 512;
-				pNodeData->ulFlags = aOpenBTPage;
+				if(fCRCValid || validSig)
+				{
+					NodeData * pNodeData = new NodeData;
+					nImage = fCRCValid ? iconPage : iconCorrupt;
 
-				m_frc.AddRange(start, end, TYPE_PAGE);
-				m_lc.InsertItem(count++, L"Page", nImage);
-				m_lc.SetItemData(count-1, (DWORD_PTR)pNodeData);
+					pNodeData->bref.ib = start;
+					pNodeData->bref.bid = pt.bid;
+					pNodeData->cb = 512;
+					pNodeData->ulFlags = aOpenBTPage;
 
-				wsprintf(buffer, L"0x%I64X", pt.bid);
-				m_lc.SetItemText(count-1, 1, buffer);
+					m_frc.AddRange(start, end, TYPE_PAGE);
+					m_lc.InsertItem(count++, L"Page", nImage);
+					m_lc.SetItemData(count-1, (DWORD_PTR)pNodeData);
 
-				wsprintf(buffer, L"%I64u - %I64u (%u bytes)", start, end, (ULONG)(end - start));
-				m_lc.SetItemText(count-1, 2, buffer);
+					wsprintf(buffer, L"0x%I64X", pt.bid);
+					m_lc.SetItemText(count-1, 1, buffer);
 
+					wsprintf(buffer, L"%I64u - %I64u (%u bytes)", start, end, (ULONG)(end - start));
+					m_lc.SetItemText(count-1, 2, buffer);
+				}
 				delete [] pPage;
 			}
 
@@ -936,36 +939,41 @@ BOOL CScavengeResults::OnInitDialog()
 		if(
 			(bt.cb <= 8192L) && 
 			(bt.cb > 0) &&
-			(bt.bid >= bidIncrement) &&
-			(ComputeSig(end-CbAlignDisk(bt.cb), bt.bid) == bt.wSig)
+			(bt.bid >= bidIncrement)
 		)
 		{
+			bool validSig = (ComputeSig(end-CbAlignDisk(bt.cb), bt.bid) == bt.wSig);
 			// close enough..
 			start = end - CbAlignDisk(bt.cb);
 
 			if((start < (m_start + m_length)) && end > m_start)
 			{
 				BYTE * pBlock = new BYTE[BBufferSize(bt.cb)];
-				NodeData * pNodeData = new NodeData;
 
 				m_pNDBViewer->ReadData(pBlock, BBufferSize(bt.cb), NULL, 0, end-CbAlignDisk(bt.cb), CbAlignDisk(bt.cb));
 				fCRCValid = (ComputeCRC(pBlock, BBufferSize(bt.cb)) == bt.dwCRC);
-				nImage = fCRCValid ? (BIDIsInternal(bt.bid) ? iconInternalBlock : iconBlock) : iconCorrupt;
 
-				pNodeData->bref.ib = start;
-				pNodeData->bref.bid = bt.bid;
-				pNodeData->cb = bt.cb;
-				pNodeData->ulFlags = aOpenBlock | aBrowseBBT;
+				if(validSig || fCRCValid)
+				{
+					NodeData * pNodeData = new NodeData;
 
-				m_frc.AddRange(start, end, TYPE_BLOCK);
-				m_lc.InsertItem(count++, L"Block", nImage);
-				m_lc.SetItemData(count-1, (DWORD_PTR)pNodeData);
+					nImage = fCRCValid ? (BIDIsInternal(bt.bid) ? iconInternalBlock : iconBlock) : iconCorrupt;
 
-				wsprintf(buffer, L"0x%I64X", bt.bid);
-				m_lc.SetItemText(count-1, 1, buffer);
+					pNodeData->bref.ib = start;
+					pNodeData->bref.bid = bt.bid;
+					pNodeData->cb = bt.cb;
+					pNodeData->ulFlags = aOpenBlock | aBrowseBBT;
 
-				wsprintf(buffer, L"%I64u - %I64u (%u bytes)", start, end, (ULONG)(end - start));
-				m_lc.SetItemText(count-1, 2, buffer);
+					m_frc.AddRange(start, end, TYPE_BLOCK);
+					m_lc.InsertItem(count++, L"Block", nImage);
+					m_lc.SetItemData(count-1, (DWORD_PTR)pNodeData);
+
+					wsprintf(buffer, L"0x%I64X", bt.bid);
+					m_lc.SetItemText(count-1, 1, buffer);
+
+					wsprintf(buffer, L"%I64u - %I64u (%u bytes)", start, end, (ULONG)(end - start));
+					m_lc.SetItemText(count-1, 2, buffer);
+				}
 				
 				delete [] pBlock;
 			}
